@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  body {
+    background-color: black;
+    font-family: sans-serif;
+    text-align: center;
+    padding-top: 50px;
+  }
+  h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 50px;
+    color: lightcoral;
+  }
+  p {
+    color: mistyrose;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+  }
+  button {
+    background-color: powderblue;
+    color: darkblue;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>
+<body>
+    <h1>Welcome to the future!</h1>
+    <style>
+  
+  </style>
+
+    <p>Click the button to find out what's waiting for you</p>
+
+<button onclick="nesteSvar()">Get prediction!</button>
+
+  <p id="melding"></p>
+
+  <script>
+    // Lag en liste med svar for å ha alternativer for alle og gjør det litt morsomt
+    var svar = [
+      "Love and happiness will be very important in your future",
+      "A successfull and rich life is heading your way",
+      "You're already where you're supposed to be!",
+      "You will be single until you die!"
+    ];
+
+    // Teller for å huske hvilket svar vi er på 
+    var index = 0;
+
+    function nesteSvar() {
+      // Hent elementet 
+      var tekst = document.getElementById("melding");
+      // Få satt teksten til svarene
+      tekst.textContent = svar[index];
+      // Øk telleren (og start på nytt når vi er ferdig med listen, sånn at du får flere alternativer enn bare ett svar)
+      index = (index + 1) % svar.length;
+    }
+  </script>
+</body>
+</html>
